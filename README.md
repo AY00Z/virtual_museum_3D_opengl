@@ -1,110 +1,115 @@
-# Musée virtuel OpenGL – Deux salles, deux ambiances
+# 🏛️ Virtual Museum — Real-Time 3D Engine in C++ / OpenGL
 
-Projet de **Synthèse d'images** (Master 2, Université Gustave Eiffel – IGM, 2026/2027).
+A real-time 3D application written from scratch in **modern C++** and **OpenGL 3.3 (core profile, shader-based)**.
+Explore a two-room virtual museum in first-person view, each room with its own lighting model and visual identity.
 
-Application 3D temps réel en C++ / OpenGL 3.3 permettant de visiter, en vue à la première personne,
-un musée composé de deux salles reliées par un court passage, chacune avec son propre modèle d'illumination.
-
-Auteure : **Aya Boussaid**
+> 🚧 **Work in progress** — the engine foundations are done; lighting, textures and artworks are under active development.
 
 ---
 
-## Compilation
+## ✨ Highlights
 
-Le projet utilise le framework des TD (glimac, GLFW, glad, glm), déjà inclus dans le dépôt.
+- **Custom rendering pipeline** built directly on OpenGL: VBO / IBO / VAO management, GLSL shaders, MVP matrices, depth testing
+- **First-person camera** with mouse look, smooth frame-rate–independent movement (delta time) and fixed eye height
+- **Collision system** that keeps the visitor inside the museum, with natural sliding along walls
+- **Procedural level geometry** generated from a single, data-driven floor plan
+- **Clean resource management** using RAII: every GPU buffer is released automatically, no memory leaks
+- **Cross-platform** build with CMake (Linux / GCC and Windows / MinGW)
 
-### Sous Linux (machines de la fac)
+---
 
-Dépendances système (à installer si besoin) :
+## 🛠️ Tech Stack
+
+| | |
+|---|---|
+| **Language** | C++17 |
+| **Graphics API** | OpenGL 3.3 core, GLSL 330 |
+| **Windowing & input** | GLFW |
+| **OpenGL loader** | glad |
+| **Math** | GLM |
+| **Build system** | CMake |
+
+---
+
+## 🎮 Controls
+
+| Key | Action |
+|---|---|
+| **W A S D** (QWERTY) / **Z Q S D** (AZERTY) / **Arrow keys** | Move |
+| **Mouse** | Look around |
+| **F1** | Toggle wireframe mode |
+| **Esc** | Quit |
+
+Movement keys are mapped by **physical position**, so they work out of the box on both QWERTY and AZERTY keyboards.
+
+---
+
+## 🚀 Build & Run
+
+### Linux
 
 ```bash
+# Dependencies (Debian / Ubuntu)
 sudo apt install build-essential cmake libgl-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev
-```
 
-Compilation, depuis la racine du dépôt :
-
-```bash
-mkdir build
-cd build
+# Build
+mkdir build && cd build
 cmake ..
 make
+
+# Run (from the repository root)
+cd ..
+./bin/TPProjet_musee
 ```
 
-L'exécutable est créé dans le dossier `bin/` à la racine du dépôt.
+### Windows (MinGW + VS Code)
 
-### Sous Windows (MinGW + VS Code)
+1. Open the folder in VS Code with the **CMake Tools** extension.
+2. `Ctrl + Shift + P` → **CMake: Configure**, then `F7` to build.
+3. Run `.\bin\TPProjet_musee.exe`.
 
-1. Ouvrir le dossier du projet dans VS Code (extension **CMake Tools**).
-2. `Ctrl + Shift + P` → **CMake: Configure**.
-3. `F7` pour compiler.
+All third-party libraries (GLFW, glad, GLM) are bundled in the repository — no extra installation needed.
 
 ---
 
-## Lancement
+## 🧱 Architecture
 
-Depuis la racine du dépôt :
-
-```bash
-./bin/TPProjet_musee          # Linux
-.\bin\TPProjet_musee.exe      # Windows
+```
+TPProjet/
+├── main.cpp            # Window, main loop, input handling
+├── Vertex3D.hpp        # Vertex layout: position, normal, UV
+├── Mesh.hpp/.cpp       # GPU mesh (VBO + IBO + VAO), RAII-managed
+├── MuseumLayout.hpp/.cpp  # Floor plan, geometry generation, walkable-area collisions
+├── Camera.hpp/.cpp     # First-person camera (yaw / pitch), view matrix
+└── shaders/            # GLSL vertex & fragment shaders
 ```
 
----
+**Design choices**
 
-## Commandes
+- **`Mesh`** owns its OpenGL buffers and is non-copyable, which prevents double-free bugs and guarantees cleanup.
+- **`MuseumLayout`** is the single source of truth for the museum dimensions: walls, floors and collisions are all derived from the same constants.
+- **Collisions** test the X and Z axes separately, so the player slides along walls instead of stopping dead.
 
-| Touche (AZERTY) | Touche (QWERTY) | Action |
-|---|---|---|
-| **Z** / Flèche haut | W / Flèche haut | Avancer |
-| **S** / Flèche bas | S / Flèche bas | Reculer |
-| **Q** / Flèche gauche | A / Flèche gauche | Se décaler à gauche |
-| **D** / Flèche droite | D / Flèche droite | Se décaler à droite |
-| **Souris** | Souris | Regarder autour de soi |
-| **F1** | F1 | Activer / désactiver le mode fil de fer |
-| **Échap** | Échap | Quitter l'application |
-
-Les touches de déplacement sont définies par leur **emplacement physique** sur le clavier :
-elles fonctionnent donc aussi bien en AZERTY (ZQSD) qu'en QWERTY (WASD).
+**World coordinates:** Y-up, 1 unit = 1 meter. Each room is 20 m × 24 m, joined by a 2 m × 4 m corridor.
 
 ---
 
-## Fonctionnalités
+## 🗺️ Roadmap
 
-### Réalisées
-
-- [x] Géométrie des deux salles (20 m × 24 m) et du passage (2 m × 4 m), conforme au plan du sujet, sans plafond
-- [x] Caméra FPS : regard à la souris, déplacement fluide au clavier (indépendant du nombre d'images par seconde), hauteur des yeux fixe
-- [x] Collisions avec les murs, avec glissement le long des parois
-- [x] Mode fil de fer (F1)
-- [x] Sortie propre de l'application (Échap), libération automatique des ressources OpenGL
-
-### À venir
-
-- [ ] Skybox visible depuis tout le musée
-- [ ] Salle 1 : éclairage de Phong avec deux lumières (dont une mobile), objet texturé, objet animé
-- [ ] Salle 2 : modèle d'illumination différent, surface transparente ou miroir
-- [ ] Changement de modèle d'illumination au niveau du passage
-- [ ] Deux œuvres minimum par salle
-- [ ] Touches : pause de l'animation, allumage / extinction d'une lumière de la salle 1
+- [x] 3D museum geometry (two rooms + corridor, open sky)
+- [x] First-person camera with smooth movement
+- [x] Wall collisions with sliding
+- [x] Wireframe debug mode
+- [ ] Skybox
+- [ ] Room 1 — Phong lighting with multiple lights (including a moving light), textured and animated artworks
+- [ ] Room 2 — distinct stylized lighting model, mirror / transparent surfaces
+- [ ] Seamless lighting-model switch when walking between rooms
+- [ ] 3D model loading (`.obj`) for the artworks
 
 ---
 
-## Organisation du code
+## 👩‍💻 Author
 
-Tout le code du projet se trouve dans le dossier `TPProjet/` :
+**Aya Boussaid** — [@AY00Z](https://github.com/AY00Z)
 
-| Fichier | Rôle |
-|---|---|
-| `main.cpp` | Création de la fenêtre, boucle principale, gestion du clavier et de la souris |
-| `Vertex3D.hpp` | Structure d'un sommet 3D : position, normale, coordonnées de texture |
-| `Mesh.hpp / .cpp` | Maillage : gère le VBO, l'IBO et le VAO, libérés automatiquement à la destruction (RAII) |
-| `MuseumLayout.hpp / .cpp` | Plan du musée : dimensions, construction du sol et des murs, zone praticable (collisions) |
-| `Camera.hpp / .cpp` | Caméra FPS : position, angles de vue, déplacement horizontal, matrice View |
-| `shaders/` | Shaders GLSL (vertex et fragment) |
-
-### Repère utilisé
-
-- Axe **Y vers le haut**, sol en `y = 0`, **1 unité = 1 mètre**.
-- Salle 1 : `x ∈ [-21, -1]`, salle 2 : `x ∈ [1, 21]`, les deux avec `z ∈ [-12, 12]`.
-- Passage : `x ∈ [-1, 1]`, `z ∈ [-2, 2]`.
-- La frontière entre les deux modèles d'illumination (pointillé vert du sujet) est en **`x = 0`**.
+Feel free to reach out or open an issue!
