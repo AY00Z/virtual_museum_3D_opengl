@@ -1,0 +1,3 @@
+C:\Users\aya20\miniconda3\Library\bin\cmake.exe -E rm -f CMakeFiles\TPProjet_musee.dir/objects.a
+"C:\Program Files\mingw64\bin\ar.exe" qc CMakeFiles\TPProjet_musee.dir/objects.a @CMakeFiles\TPProjet_musee.dir\objects1.rsp
+"C:\Program Files\mingw64\bin\g++.exe" -g -Wl,--whole-archive CMakeFiles\TPProjet_musee.dir/objects.a -Wl,--no-whole-archive -o "C:\Users\aya20\Desktop\Master Gystave Eiffel\M2 cours\SyntheseImage3D\Projet\Projet_SynthImage\bin\TPProjet_musee.exe" -Wl,--out-implib,"C:\Users\aya20\Desktop\Master Gystave Eiffel\M2 cours\SyntheseImage3D\Projet\Projet_SynthImage\bin\libTPProjet_musee.dll.a" -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\TPProjet_musee.dir\linkLibs.rsp

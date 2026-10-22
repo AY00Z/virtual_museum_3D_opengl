@@ -1,0 +1,13 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/aya20/Desktop/Master Gystave Eiffel/M2 cours/SyntheseImage3D/Projet/Projet_SynthImage/build/cmake_install.cmake",
+		"C:/Users/aya20/Desktop/Master Gystave Eiffel/M2 cours/SyntheseImage3D/Projet/Projet_SynthImage/build/glimac/cmake_install.cmake",
+		"C:/Users/aya20/Desktop/Master Gystave Eiffel/M2 cours/SyntheseImage3D/Projet/Projet_SynthImage/build/glimac/third-party/glfw/cmake_install.cmake",
+		"C:/Users/aya20/Desktop/Master Gystave Eiffel/M2 cours/SyntheseImage3D/Projet/Projet_SynthImage/build/glimac/third-party/glfw/src/cmake_install.cmake",
+		"C:/Users/aya20/Desktop/Master Gystave Eiffel/M2 cours/SyntheseImage3D/Projet/Projet_SynthImage/build/glimac/third-party/glm/cmake_install.cmake",
+		"C:/Users/aya20/Desktop/Master Gystave Eiffel/M2 cours/SyntheseImage3D/Projet/Projet_SynthImage/build/glimac/third-party/glm/glm/cmake_install.cmake",
+		"C:/Users/aya20/Desktop/Master Gystave Eiffel/M2 cours/SyntheseImage3D/Projet/Projet_SynthImage/build/TPProjet/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

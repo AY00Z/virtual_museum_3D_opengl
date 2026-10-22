@@ -1,0 +1,263 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "Threads::Threads::@43e626f758b6f20522a2",
+					"jsonFile" : "target-Threads__Threads-Debug-c276f886c3289684349c.json",
+					"name" : "Threads::Threads",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "glm::@cce5d51431a94f0df522",
+					"jsonFile" : "target-glm-Debug-9d84447410f645553b0d.json",
+					"name" : "glm",
+					"projectIndex" : 2
+				}
+			],
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-b5805d5c08fd3d92def4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "glimac",
+					"childIndexes" : 
+					[
+						2,
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-glimac-Debug-e7eef581e346be378503.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "glimac",
+					"targetIndexes" : 
+					[
+						1,
+						3
+					]
+				},
+				{
+					"abstractTargetIndexes" : 
+					[
+						0
+					],
+					"build" : "glimac/third-party/glfw",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-glimac.third-party.glfw-Debug-597906037d9821994677.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "glimac/third-party/glfw",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "glimac/third-party/glfw/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-glimac.third-party.glfw.src-Debug-254dbf645dd8147f74b8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "glimac/third-party/glfw/src",
+					"targetIndexes" : 
+					[
+						2,
+						5
+					]
+				},
+				{
+					"build" : "glimac/third-party/glm",
+					"childIndexes" : 
+					[
+						5
+					],
+					"jsonFile" : "directory-glimac.third-party.glm-Debug-a25658a4f67c58485bd1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "glimac/third-party/glm"
+				},
+				{
+					"abstractTargetIndexes" : 
+					[
+						1
+					],
+					"build" : "glimac/third-party/glm/glm",
+					"jsonFile" : "directory-glimac.third-party.glm.glm-Debug-7bf1bb25f7a999b69318.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 2,
+					"source" : "glimac/third-party/glm/glm"
+				},
+				{
+					"build" : "TPProjet",
+					"jsonFile" : "directory-TPProjet-Debug-189504b463d7fe4bfc26.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "TPProjet",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						6
+					],
+					"name" : "TD_GL_LEVEL2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						3
+					]
+				},
+				{
+					"abstractTargetIndexes" : 
+					[
+						0
+					],
+					"directoryIndexes" : 
+					[
+						2,
+						3
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						4,
+						5
+					]
+				},
+				{
+					"abstractTargetIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						4,
+						5
+					],
+					"name" : "glm",
+					"parentIndex" : 0
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 6,
+					"id" : "TPProjet_musee::@1782f6bb0999b67f2048",
+					"jsonFile" : "target-TPProjet_musee-Debug-a99a6ae4630bbf0560a7.json",
+					"name" : "TPProjet_musee",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "glad::@cfa65abc3ab409b74416",
+					"jsonFile" : "target-glad-Debug-a22bcfc5dcf303a62864.json",
+					"name" : "glad",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "glfw::@650d230e8f6139fb999d",
+					"jsonFile" : "target-glfw-Debug-10c8985a86d88e3a513a.json",
+					"name" : "glfw",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "glimac::@cfa65abc3ab409b74416",
+					"jsonFile" : "target-glimac-Debug-a80d622eb82111fecbb5.json",
+					"name" : "glimac",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "uninstall::@43e626f758b6f20522a2",
+					"jsonFile" : "target-uninstall-Debug-aba4341c0c61a45a6c08.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "update_mappings::@650d230e8f6139fb999d",
+					"jsonFile" : "target-update_mappings-Debug-f906086ec93ca2f891bc.json",
+					"name" : "update_mappings",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/aya20/Desktop/Master Gystave Eiffel/M2 cours/SyntheseImage3D/Projet/Projet_SynthImage/build",
+		"source" : "C:/Users/aya20/Desktop/Master Gystave Eiffel/M2 cours/SyntheseImage3D/Projet/Projet_SynthImage"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 11
+	}
+}

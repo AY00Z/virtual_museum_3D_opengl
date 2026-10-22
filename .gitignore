@@ -1,0 +1,10 @@
+   # Dossiers générés par la compilation
+   build/
+   bin/
+
+   # Configuration locale de VS Code
+   .vscode/
+
+   # Fichiers parasites de Windows
+   desktop.ini
+   Thumbs.db

@@ -1,0 +1,41 @@
+{
+	"abstract" : true,
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library"
+		],
+		"files" : 
+		[
+			"glimac/third-party/glm/glm/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 45,
+				"parent" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 11
+	},
+	"id" : "glm::@cce5d51431a94f0df522",
+	"name" : "glm",
+	"paths" : 
+	{
+		"build" : "glimac/third-party/glm/glm",
+		"source" : "glimac/third-party/glm/glm"
+	},
+	"sources" : [],
+	"type" : "INTERFACE_LIBRARY"
+}
